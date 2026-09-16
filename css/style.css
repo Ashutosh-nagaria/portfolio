@@ -260,11 +260,16 @@ p { margin: 0 0 1.1em; }
   display: grid;
   grid-template-columns: 1.6fr 0.9fr;
   gap: clamp(32px, 5vw, 72px);
-  align-items: end;
+  align-items: center;
 }
 .hero__grid--top { align-items: start; }
 @media (max-width: 900px) {
   .hero__grid { grid-template-columns: 1fr; gap: 40px; }
+  .portrait { justify-self: center; }
+}
+@media (max-width: 600px) {
+  .portrait img,
+  .portrait::after { width: 240px; height: 240px; }
 }
 
 .status {
@@ -296,8 +301,8 @@ p { margin: 0 0 1.1em; }
   position: relative;
   z-index: 1;
   display: block;
-  width: 100%;
-  aspect-ratio: 4 / 5;
+  width: 280px;
+  height: 280px;
   object-fit: cover;
   object-position: center 18%;
   filter: contrast(1.03);
@@ -307,8 +312,8 @@ p { margin: 0 0 1.1em; }
   position: absolute;
   top: 0;
   left: 0;
-  width: calc(100% - 14px);
-  aspect-ratio: 4 / 5;
+  width: 280px;
+  height: 280px;
   border: 1px solid var(--accent);
   pointer-events: none;
   z-index: 0;
