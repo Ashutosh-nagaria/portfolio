@@ -308,7 +308,7 @@ p { margin: 0 0 1.1em; }
   top: 0;
   left: 0;
   width: calc(100% - 14px);
-  height: calc(100% - 14px);
+  aspect-ratio: 4 / 5;
   border: 1px solid var(--accent);
   pointer-events: none;
   z-index: 0;
