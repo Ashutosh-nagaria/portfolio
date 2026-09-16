@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- TODO: replace both title and description with the real ones -->
+<title>Case study title | Ashutosh Nagaria</title>
+<meta name="description" content="One sentence on what this project was and what happened.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- NOTE: from inside work/ these paths need the ../ prefix -->
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="../index.html">Ashutosh Nagaria</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <!-- the JS only marks a nav item when the filename matches exactly,
+           so pages in work/ set the active state by hand instead -->
+      <a href="../work.html" aria-current="page">Work</a>
+      <a href="../writing.html">Writing</a>
+      <a href="../cv.html">CV</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <article class="case">
+    <div class="wrap">
+
+      <!-- TODO: eyebrow is usually the context line, e.g. company and year -->
+      <p class="eyebrow">Company &middot; Year &middot; Your role</p>
+
+      <!-- TODO: the title should name the outcome, not the feature -->
+      <h1 class="display case__title" style="font-size:clamp(2.1rem,4.6vw,3.4rem);">Case study title</h1>
+
+      <p class="lede">One paragraph that states the problem, the move you made, and the outcome. Someone who reads only this should know whether to keep reading.</p>
+
+      <!-- TODO: keep to three or four items -->
+      <div class="case__meta">
+        <span>Role: Product Manager</span>
+        <span>Timeline: 6 months</span>
+        <span>Scope: 0 to GA</span>
+        <span>Users: 1M+</span>
+      </div>
+
+    </div>
+
+    <!-- TODO: the numbers that matter. Delete the strip if there aren't any. -->
+    <div class="wrap">
+      <div class="metrics" style="margin-bottom:clamp(32px,5vw,52px);">
+        <div class="metric">
+          <span class="metric__value">00</span>
+          <span class="metric__label">Metric label</span>
+        </div>
+        <div class="metric">
+          <span class="metric__value">00</span>
+          <span class="metric__label">Metric label</span>
+        </div>
+        <div class="metric">
+          <span class="metric__value">00</span>
+          <span class="metric__label">Metric label</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap">
+
+      <!-- repeat this block for each section.
+           the label sits in the left column on wide screens and stacks on mobile -->
+      <section class="case__body">
+        <p class="pdr__label">Context</p>
+        <div class="pdr__content prose">
+          <p>What was the situation before you got involved. What did the product look like, who was it for, what was the org around it.</p>
+          <p>Keep it to two or three paragraphs. This section is setup, not story.</p>
+        </div>
+      </section>
+
+      <section class="case__body">
+        <p class="pdr__label">Problem</p>
+        <div class="pdr__content prose">
+          <p>State the problem as a decision that had to be made, not as a gap in the feature list. What was genuinely at stake and what made it hard.</p>
+          <ul class="bullets">
+            <li>Constraint one, e.g. a fixed GA date.</li>
+            <li>Constraint two, e.g. an enterprise customer blocking on it.</li>
+            <li>Constraint three, e.g. no historical usage data to learn from.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- rename this label if the piece is not about a single decision -->
+      <section class="case__body">
+        <p class="pdr__label">The decision</p>
+        <div class="pdr__content prose">
+          <p>What you chose, stated plainly in one sentence. Then the alternatives you rejected and why.</p>
+          <p>This is the most valuable part of the page. Anyone can describe what shipped. Very few write down what they chose not to do.</p>
+        </div>
+      </section>
+
+      <section class="case__body">
+        <p class="pdr__label">What I did</p>
+        <div class="pdr__content prose">
+          <p>Your specific actions, not the team's. Conversations, documents, tradeoffs, sequencing.</p>
+          <ul class="bullets">
+            <li>Action one and what it changed.</li>
+            <li>Action two and what it changed.</li>
+            <li>Action three and what it changed.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case__body">
+        <p class="pdr__label">Result</p>
+        <div class="pdr__content prose">
+          <p>What happened, with numbers. Distinguish between what you measured and what you estimated.</p>
+          <p>If it only partly worked, say so. Credibility is worth more than a clean ending.</p>
+        </div>
+      </section>
+
+      <section class="case__body">
+        <p class="pdr__label">What I'd change</p>
+        <div class="pdr__content prose">
+          <p>One or two things you would do differently. This section is optional, but it is the one that reads as senior.</p>
+        </div>
+      </section>
+
+      <!-- next / previous navigation. point these at real files or delete the block -->
+      <div class="section__head" style="margin-top:clamp(24px,4vw,40px);">
+        <a class="section__link" href="../work.html">&larr; All work</a>
+        <a class="section__link" href="../work.html">Next case study &rarr;</a>
+      </div>
+
+    </div>
+  </article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__grid">
+      <div>
+        <p class="site-footer__name">Ashutosh Nagaria</p>
+        <p class="site-footer__note">AI Product Manager in Hyderabad, India. Agentic AI, knowledge graphs and enterprise SaaS.</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../work.html">Work</a></li>
+          <li><a href="../writing.html">Writing</a></li>
+          <li><a href="../cv.html">CV</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="mailto:anashutosh9@gmail.com">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/ashutosh-nagaria/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/Ashutosh-nagaria" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__base">
+      <span>&copy; <span data-year>2026</span> Ashutosh Nagaria</span>
+      <span>anagaria.com</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

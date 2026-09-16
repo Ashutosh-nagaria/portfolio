@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notifications and Feedback | Ashutosh Nagaria</title>
+<meta name="description" content="Owning a notification platform behind hundreds of millions of monthly sends, and a feedback product that reached sixty percent adoption.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="../index.html">Ashutosh Nagaria</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../work.html" aria-current="page">Work</a>
+      <a href="../writing.html">Writing</a>
+      <a href="../cv.html">CV</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <article class="case">
+    <div class="wrap">
+
+      <p class="eyebrow">ServiceNow &middot; Platform scale &middot; Product Manager</p>
+
+      <h1 class="display case__title" style="font-size:clamp(2.1rem,4.6vw,3.4rem);">Notifications at 250 million sends a month, and a feedback product people chose to use</h1>
+
+      <!-- DRAFT NOTE: structurally complete. Narrative and any TODO figures
+           still need Ashutosh's review before publishing -->
+
+      <p class="lede">Two products with opposite problems. Notifications is a platform where the hard part is restraint at scale. Feedback is a product where the hard part is persuading people to use it at all. I owned both.</p>
+
+      <div class="case__meta">
+        <span>Role: Product Manager</span>
+        <span>Scale: 250M+ monthly sends</span>
+        <span>Adoption: 60%</span>
+        <span>Type: Platform</span>
+      </div>
+
+    </div>
+
+    <div class="wrap">
+      <div class="metrics" style="margin-bottom:clamp(32px,5vw,52px);">
+        <div class="metric">
+          <span class="metric__value">250M+</span>
+          <span class="metric__label">Notifications monthly</span>
+        </div>
+        <div class="metric">
+          <span class="metric__value">60%</span>
+          <span class="metric__label">Feedback adoption</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap">
+
+      <section class="case__body">
+        <p class="pdr__label">Context</p>
+        <div class="pdr__content prose">
+          <p>Notifications sat underneath a large part of the employee experience suite. Almost every other surface depended on it to tell users that something had happened, which made it a platform in the real sense: the people affected by its decisions were mostly other teams, not end users.</p>
+          <p>Feedback was the opposite kind of problem. A voluntary product, competing for attention, where the only measure that mattered was whether employees bothered.</p>
+        </div>
+      </section>
+
+      <section class="case__body">
+        <p class="pdr__label">Problem</p>
+        <div class="pdr__content prose">
+          <p>The notification problem was volume. At hundreds of millions of sends a month, every decision compounds. A slightly noisy default becomes a company-wide problem, and once users start ignoring notifications, no amount of new ones brings the attention back.</p>
+          <p>The feedback problem was indifference. Employees had no strong reason to engage and plenty of reasons not to, including a reasonable suspicion that nothing would come of it.</p>
+          <ul class="bullets">
+            <li>Notification defaults were set per integration, so noise accumulated without anyone owning the total.</li>
+            <li>Volume was a distributed consequence of many teams' individual choices, which is the hardest kind of problem to fix.</li>
+            <li>Adoption in a voluntary product depends on trust, and trust is slow to build and fast to lose.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case__body">
+        <p class="pdr__label">The decision</p>
+        <div class="pdr__content prose">
+          <p>On notifications, I treated volume as a product feature to be governed rather than a byproduct to be tolerated. That meant pushing defaults toward quieter, making the total visible, and accepting that some integration owners would be unhappy about their send counts dropping.</p>
+          <p>On feedback, I prioritised closing the loop over collecting more input. The instinct is to make the ask easier. The better move was to make the response visible, because adoption in a voluntary product is driven by whether people believe it changes anything.</p>
+          <p>The alternative I rejected on notifications was to keep adding channels and preferences and let users manage their own noise. Preference management shifts the cost to the person least able to see the whole picture, and most people never touch the settings.</p>
+        </div>
+      </section>
+
+      <section class="case__body">
+        <p class="pdr__label">What I did</p>
+        <div class="pdr__content prose">
+          <ul class="bullets">
+            <li>Owned the notification platform as a product, including the defaults that determine most of the volume.</li>
+            <li>Worked with the integration owners across teams, since the send volume was under their control rather than mine.</li>
+            <li>Ran the feedback product end to end, from the collection experience through to making the follow-up visible.</li>
+            <li>Kept the two products separate in framing, because the metrics that define success for a platform and for a voluntary product pull in different directions.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case__body">
+        <p class="pdr__label">Result</p>
+        <div class="pdr__content prose">
+          <p>Notifications ran at more than 250 million sends a month across the suite. Feedback reached roughly sixty percent employee adoption, which for a voluntary internal product is the number that matters most.</p>
+          <!-- TODO: add one sentence on a specific change in notification volume or
+               engagement, if there is a figure that is safe to share -->
+        </div>
+      </section>
+
+      <section class="case__body">
+        <p class="pdr__label">What I'd change</p>
+        <div class="pdr__content prose">
+          <p>I would have instrumented notification quality earlier, not just volume. Send counts tell you how loud the platform is. They do not tell you whether the right messages are landing. Those are different questions and the second one is the one users actually feel.</p>
+        </div>
+      </section>
+
+      <div class="section__head" style="margin-top:clamp(24px,4vw,40px);">
+        <a class="section__link" href="people-finder.html">&larr; People Finder</a>
+        <a class="section__link" href="../work.html">All work &rarr;</a>
+      </div>
+
+    </div>
+  </article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__grid">
+      <div>
+        <p class="site-footer__name">Ashutosh Nagaria</p>
+        <p class="site-footer__note">AI Product Manager in Hyderabad, India. Agentic AI, knowledge graphs and enterprise SaaS.</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../work.html">Work</a></li>
+          <li><a href="../writing.html">Writing</a></li>
+          <li><a href="../cv.html">CV</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="mailto:anashutosh9@gmail.com">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/ashutosh-nagaria/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/Ashutosh-nagaria" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__base">
+      <span>&copy; <span data-year>2026</span> Ashutosh Nagaria</span>
+      <span>anagaria.com</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

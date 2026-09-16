@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>People Finder AI Agent | Ashutosh Nagaria</title>
+<meta name="description" content="Choosing a knowledge graph over vector RAG for organisational search, and evaluating it properly before shipping.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="../index.html">Ashutosh Nagaria</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../work.html" aria-current="page">Work</a>
+      <a href="../writing.html">Writing</a>
+      <a href="../cv.html">CV</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <article class="case">
+    <div class="wrap">
+
+      <p class="eyebrow">ServiceNow &middot; Agentic AI &middot; Product Manager</p>
+
+      <h1 class="display case__title" style="font-size:clamp(2.1rem,4.6vw,3.4rem);">People Finder: when the question is a relationship, not a similarity</h1>
+
+      <!-- DRAFT NOTE: this page is structurally complete but the narrative and
+           any figures marked TODO still need Ashutosh's review before publishing -->
+
+      <p class="lede">An AI agent that answers "who in this organisation should I talk to about X". The hard call was not whether to use AI, but which kind. I argued for a knowledge graph over the org instead of vector search over documents, because organisational knowledge is a graph, not a pile of text.</p>
+
+      <div class="case__meta">
+        <span>Role: Product Manager</span>
+        <span>Type: Agentic AI</span>
+        <span>Approach: Knowledge graph</span>
+        <span>Accuracy: 90%+</span>
+        <span>Eval: 100 cases</span>
+      </div>
+
+    </div>
+
+    <div class="wrap">
+      <div class="metrics" style="margin-bottom:clamp(32px,5vw,52px);">
+        <div class="metric">
+          <span class="metric__value">90%+</span>
+          <span class="metric__label">Answer accuracy</span>
+        </div>
+        <div class="metric">
+          <span class="metric__value">100</span>
+          <span class="metric__label">Case evaluation set</span>
+        </div>
+        <div class="metric">
+          <span class="metric__value">Graph</span>
+          <span class="metric__label">Over vector RAG</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap">
+
+      <section class="case__body">
+        <p class="pdr__label">Context</p>
+        <div class="pdr__content prose">
+          <p>Large organisations have a knowledge location problem that has nothing to do with documentation. The information exists, mostly in people's heads and in the pattern of who has worked with whom, and the difficulty is finding the right person in a company of tens of thousands.</p>
+          <p>People Finder was built to answer that question directly: given a topic, who should I speak to.</p>
+        </div>
+      </section>
+
+      <section class="case__body">
+        <p class="pdr__label">Problem</p>
+        <div class="pdr__content prose">
+          <p>The default answer to "build a search assistant" in 2024 was retrieval augmented generation over a document corpus. That was the pattern everyone reached for. The trouble was that it did not match the question being asked.</p>
+          <ul class="bullets">
+            <li>Vector search answers "what text is similar to this query". The user was asking "who is connected to this topic", which is a different question with a different shape.</li>
+            <li>Organisational data is already relational: reporting lines, project membership, skills, collaboration history. Flattening that into embedded chunks throws away the structure that answers the question.</li>
+            <li>Wrong answers here are unusually costly. Sending someone to an irrelevant colleague wastes two people's time and erodes trust in the agent immediately.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case__body">
+        <p class="pdr__label">The decision</p>
+        <div class="pdr__content prose">
+          <p>I argued that the retrieval layer should be a knowledge graph built over people, skills, projects and interactions, with the language model used for interpreting the question and phrasing the answer rather than for the retrieval itself.</p>
+          <p>Put simply: let the graph find the candidates, and let the model explain why. The alternative, vector search across documents and profiles, would have been faster to build and easier to demo, and it would have been the wrong tool. It would have retrieved people whose profiles used similar words, not people who were actually connected to the work.</p>
+          <p>The second half of the decision was to define what "good" meant before building the agent at all. I insisted on an evaluation set of roughly a hundred realistic questions with known correct answers, so that accuracy was something we could measure rather than assert.</p>
+        </div>
+      </section>
+
+      <section class="case__body">
+        <p class="pdr__label">What I did</p>
+        <div class="pdr__content prose">
+          <ul class="bullets">
+            <li>Made the retrieval-architecture call early, and documented the reasoning so the team was not relitigating it mid-build.</li>
+            <li>Defined the evaluation set of roughly 100 cases with expected answers, which turned "the agent feels good" into a number we could track.</li>
+            <li>Worked with engineering to keep the graph schema tied to the questions users actually asked, rather than modelling the org chart in full.</li>
+            <li>Drove the answer experience: the agent had to show its reasoning, because a recommendation to contact someone is only credible if the user can see why.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case__body">
+        <p class="pdr__label">Result</p>
+        <div class="pdr__content prose">
+          <p>The agent reached above ninety percent answer accuracy against the hundred-case evaluation set.</p>
+          <!-- TODO: add adoption or usage numbers here if they can be shared,
+               plus one sentence on what failed most often in the remaining cases -->
+        </div>
+      </section>
+
+      <section class="case__body">
+        <p class="pdr__label">Why it transfers</p>
+        <div class="pdr__content prose">
+          <p>The general lesson is that the retrieval architecture is a product decision, not an implementation detail. Choosing between a graph, a vector index and a plain relational query determines what the product can answer well, and that choice should be made by whoever owns the problem definition, before engineering starts optimising the wrong thing.</p>
+        </div>
+      </section>
+
+      <div class="section__head" style="margin-top:clamp(24px,4vw,40px);">
+        <a class="section__link" href="employee-works.html">&larr; Employee Works</a>
+        <a class="section__link" href="notifications-feedback.html">Next: Notifications and Feedback &rarr;</a>
+      </div>
+
+    </div>
+  </article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__grid">
+      <div>
+        <p class="site-footer__name">Ashutosh Nagaria</p>
+        <p class="site-footer__note">AI Product Manager in Hyderabad, India. Agentic AI, knowledge graphs and enterprise SaaS.</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../work.html">Work</a></li>
+          <li><a href="../writing.html">Writing</a></li>
+          <li><a href="../cv.html">CV</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="mailto:anashutosh9@gmail.com">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/ashutosh-nagaria/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/Ashutosh-nagaria" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__base">
+      <span>&copy; <span data-year>2026</span> Ashutosh Nagaria</span>
+      <span>anagaria.com</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
