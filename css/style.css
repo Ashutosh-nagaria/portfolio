@@ -72,10 +72,21 @@ p { margin: 0 0 1.1em; }
 }
 
 .skip-link {
-  position: absolute; left: -9999px; top: 0;
-  background: var(--ink); color: #fff; padding: 10px 16px; z-index: 100;
+  position: absolute;
+  left: 12px; top: 12px;
+  width: 1px; height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  background: var(--ink); color: #fff; z-index: 100;
 }
-.skip-link:focus { left: 12px; top: 12px; }
+.skip-link:focus {
+  width: auto; height: auto;
+  padding: 10px 16px;
+  overflow: visible;
+  clip-path: none;
+}
 
 /* ---------- eyebrow / labels ---------- */
 .eyebrow {
@@ -152,6 +163,7 @@ p { margin: 0 0 1.1em; }
   white-space: nowrap;
 }
 .section__link:hover { text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 560px) { .section__link { white-space: normal; } }
 
 /* ---------- header ---------- */
 .site-header {
@@ -267,10 +279,6 @@ p { margin: 0 0 1.1em; }
   .hero__grid { grid-template-columns: 1fr; gap: 40px; }
   .portrait { justify-self: center; }
 }
-@media (max-width: 600px) {
-  .portrait img,
-  .portrait::after { width: 240px; height: 240px; }
-}
 
 .status {
   display: inline-flex;
@@ -317,6 +325,10 @@ p { margin: 0 0 1.1em; }
   border: 1px solid var(--accent);
   pointer-events: none;
   z-index: 0;
+}
+@media (max-width: 600px) {
+  .portrait img,
+  .portrait::after { width: 240px; height: 240px; }
 }
 .portrait__caption {
   font-family: var(--mono);
